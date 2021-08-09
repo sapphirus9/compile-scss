@@ -1,0 +1,29 @@
+{
+  "name": "compile-scss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "browser-sync": "^2.27.5",
+    "gulp-babel": "^8.0.0",
+    "gulp": "^4.0.2",
+    "gulp-cached": "^1.1.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-progeny": "^0.4.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-typescript": "^5.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-sass": "^5.0.0",
+    "postcss-merge-rules": "^5.0.2",
+    "postcss-sort-media-queries": "^3.11.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
