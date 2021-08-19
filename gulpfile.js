@@ -51,9 +51,9 @@ const _dist = {
   tsc: path.resolve(_root.dist, cfg.jsDist),
 }
 const _map = {
-  scss: cfg.distDir ? path.relative(path.resolve(_root.dist, cfg.cssDist ? cfg.cssMap : ''), path.resolve(_root.src, cfg.scssDir)) : `./${cfg.scssDir}`,
-  es6:  cfg.distDir ? path.relative(path.resolve(_root.dist, cfg.jsDist ? cfg.jsMap : ''), path.resolve(_root.src, cfg.es6Dir)) : `./${cfg.es6Dir}`,
-  tsc: cfg.distDir ? path.relative(path.resolve(_root.dist, cfg.jsDist ? cfg.jsMap : ''), path.resolve(_root.src, cfg.tscDir)) : `./${cfg.tscDir}`,
+  scss: './' + path.relative(path.resolve(_root.dist, cfg.cssDist), path.resolve(_root.src, cfg.scssDir)),
+  es6 : './' + path.relative(path.resolve(_root.dist, cfg.jsDist), path.resolve(_root.src, cfg.es6Dir)),
+  tsc : './' + path.relative(path.resolve(_root.dist, cfg.jsDist), path.resolve(_root.src, cfg.tscDir)),
 }
 
 /**
@@ -73,6 +73,7 @@ const uglify       = require('gulp-uglify')
 const autoprefixer = require('autoprefixer')
 const bsync        = require('browser-sync').create()
 const mergerules   = require('postcss-merge-rules')
+const normcharset  = require('postcss-normalize-charset')
 const smqueries    = require('postcss-sort-media-queries')
 
 /**
@@ -113,6 +114,7 @@ const ScssProd = () =>
     }))
     .pipe(postcss([
       autoprefixer({ cascade: false }),
+      normcharset(),
       mergerules(),
       smqueries()
     ]))
