@@ -4,7 +4,7 @@
 const cfg = {
   proxy    : 'localhost',
   host     : '192.168.1.31', // IPアドレス等
-  mode     : 'production', // developmentまたはproduction
+  mode     : 'development', // developmentまたはproduction
 
   rootDir  : '', // 対象のトップディレクトリ
   srcDir   : 'src', // ソースファイルのディレクトリ
@@ -175,10 +175,6 @@ const BrowserSync = done => {
     online: false,
     notify: true,
     ui: false,
-    https: {
-      key: '/root/.ssl/_wildcard.d.localhost+7-key.pem',
-      cert: '/root/.ssl/_wildcard.d.localhost+7.pem',
-    },
   })
   done()
 }
